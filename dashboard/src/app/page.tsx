@@ -13,17 +13,17 @@ function IcOutlineOpenInNew(props: SVGProps<SVGSVGElement>) {
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center h-screen">
-      <div className="bg-zinc-300 w-72  p-5 flex flex-col items-center -mt-16">
+    <main className="flex items-center justify-center h-screen bg-sky-200">
+      <div className="bg-blue-400 w-72 rounded-3xl  p-5 flex flex-col items-center -mt-16">
         <h1 className="text-3xl font-black p-4">Login</h1>
-        <div className="mt-3 w-64 flex flex-col items-center gap-1">
+        <div className="mt-3 w-64 flex flex-col items-center gap-1.5">
           <input
-            className="w-full h-8  indent-3"
+            className="w-full h-8  indent-3 rounded-xl "
             placeholder="ID"
             type="text"
           />
           <input
-            className="w-full h-8  indent-3"
+            className="w-full h-8  indent-3 rounded-xl "
             placeholder="Password"
             type="password"
           />
@@ -32,7 +32,7 @@ export default function Home() {
           {/* <button className="p-2 bg-blue-600 w-64">
             Login
           </button> */}
-          <Link href={'/Doctor'} className="p-2 bg-blue-600 w-64">
+          <Link href={'/Doctor'} className="p-2 block bg-blue-600 hover:bg-blue-700 w-64 rounded-xl font-bold text-white">
             Login
           </Link>
         </div>

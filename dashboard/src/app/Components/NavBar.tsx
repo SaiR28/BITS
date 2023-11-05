@@ -31,16 +31,16 @@ function SearchBar(){
         </button>
     </div>
 }
-function Profile(){
+function Profile(props:any){
     return <div className='bg-blue-200 rounded p-2 flex gap-4 items-center '>
-        <h1>Dr. John</h1>
+        <h1>{props.user}</h1>
         <Image className="rounded" height={28} width={28} unoptimized={true} src={'/profile.png'} alt=""/>
     </div>
 }
-export function NavBar(){
+export function NavBar(props:any){
     return<div className={`bg-blue-100  flex p-2 gap-2 h-full  items-center justify-between`}>
     <SearchBar/>
-    <Profile/>
+    <Profile user={props.user}/>
     <Link href={'/'} className="fixed right-0 bg-red-300 h-12 rounded-l-2xl flex items-center p-3 top-24 hover:bg-red-500">Temporary Logout</Link>
     </div>
 }

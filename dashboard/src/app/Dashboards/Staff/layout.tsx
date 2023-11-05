@@ -37,7 +37,7 @@ export default function RootLayout({
           <SideBar links={links}/>
           <div className="w-[calc(100vw-13rem)]">
             <div className="h-16">
-              <NavBar/>
+              <NavBar user={'Exec. Phillip'}/>
             </div>
             <div className="p-3">
             {children} 

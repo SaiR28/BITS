@@ -1,40 +1,23 @@
 
-function InfoCard(props:any){
-    return<div className="bg-purple-100 w-64 h-48 rounded">
-        <h1>{props.value}</h1>
-        <h1>{props.name}</h1>
-    </div>
-}
 
+function InfoCard(props: any) {
+    return (
+      <div className="bg-pink-200 w-52 h-52 rounded p-4 grid">
+        <h1 className="text-2xl font-bold">{props.name}</h1>
+        <p className="text-6xl self-end text-end font-black">{props.value}</p>
+      </div>
+    );
+  }
 
 export default function Page(){
     return <div>
     <div className="flex gap-2">
-       <InfoCard name='Critical' value={10} />
-        <InfoCard name='Mild' value={10} />
-        <InfoCard name='OK' value={10} /> 
+       <InfoCard name='Heart Rate' value={65} />
+        <InfoCard name='SpO₂' value={95} />
+        <InfoCard name='Respiration' value={20} /> 
     </div>
  <div>
-    {/* <table className="mt-2">
-        <tr>
-            <th>Patient Name</th>
-            <th>Data</th>
-            <th>Request Emergency</th>
-        </tr>
-        <tr>
-        <td>ABC</td>
-        <td>SpO2 -92</td>
-        <td>Yes | NO</td>
-        </tr>
-     
-    </table> */}
-    {/* <Table
-  items={tableItems}
-  columns={tableColumns}
-  responsiveMode="constrained"
-  isHeaderVisible={true}
-  layoutMode={Table.ConstrainMode.unconstrained}
-/> */}
+  
  </div>
  
 </div>

@@ -36,11 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex">
+        <div className="flex ">
           <SideBar links={links}/>
           <div className="w-[calc(100vw-13rem)]">
             <div className="h-16">
-              <NavBar/>
+              <NavBar user={'Ana'}/>
             </div>
             <div className="p-3">
             {children} 

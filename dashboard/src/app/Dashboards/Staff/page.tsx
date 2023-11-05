@@ -1,9 +1,10 @@
 import { DashboardTable } from "@/app/Components/Table";
 import Link from "next/link";
 
+
 function InfoCard(props: any) {
   return (
-    <div className="bg-purple-100 w-52 h-52 rounded p-4 grid">
+    <div className="bg-pink-200 w-52 h-52 rounded p-4 grid">
       <h1 className="text-2xl font-bold">{props.name}</h1>
       <p className="text-6xl self-end text-end font-black">{props.value}</p>
     </div>
