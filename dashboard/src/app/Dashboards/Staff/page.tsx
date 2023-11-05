@@ -14,7 +14,7 @@ function InfoCard(props: any) {
 export default function Page() {
   const Data:any=[
     ['ABC','XYZ','PQR',<Link key={1} href={'/'} className="text-blue-600">View</Link>],
-    ['ABC','XYZ','PQR',<Link key={1} href={'/'} className="text-blue-600">View</Link>],
+    ['ddd','fsf','sdf',<Link key={2} href={'/'} className="text-blue-600">View</Link>],
   
   ]
   const Headers:any=[

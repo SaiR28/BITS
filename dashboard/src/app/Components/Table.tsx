@@ -8,7 +8,7 @@ console.log(props.Data)
       <tr>
         {
         props.Headers.map((d:string[])=>{
-          return <th key={d[0]}>{d}</th>
+          return <th key={props.Headers.indexOf(d)}>{d}</th>
         })
         }
       </tr>
@@ -16,7 +16,7 @@ console.log(props.Data)
       props.Data.map((d:any)=>{
         return <tr key={d}>
           {d.map((content:string)=>{
-            return<td key={content}>{content}</td>
+            return<td key={d.indexOf(content)}>{content}</td>
           })}
         </tr>
       })

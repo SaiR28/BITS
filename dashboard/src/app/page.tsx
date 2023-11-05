@@ -1,7 +1,10 @@
+'use client'
 import Link from "next/link";
 import { SVGProps } from "react";
 
-
+import { useState } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 
 function IcOutlineOpenInNew(props: SVGProps<SVGSVGElement>) {
@@ -12,31 +15,67 @@ function IcOutlineOpenInNew(props: SVGProps<SVGSVGElement>) {
 
 
 export default function Home() {
+
+  const router = useRouter();
+  const [credentials, setCredentials] = useState({
+    id: '',
+    password: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Make a request to your API with user credentials
+      const response = await axios.post('YOUR_API_ENDPOINT', credentials);
+
+      // Assuming your API returns a token upon successful validation
+      const token = response.data.token;
+
+      // Redirect to the appropriate page based on the API response
+      if (token) {
+        router.push('/Dashboards/Doctor');
+      } else {
+        // Handle invalid credentials or other error cases
+        console.log('Invalid credentials');
+      }
+    } catch (error) {
+      // Handle API request errors
+      console.error('Error sending API request:', error);
+    }
+  };
+
+
   return (
     <main className="flex items-center justify-center h-screen bg-sky-200">
-      <div className="bg-blue-400 w-72 rounded-3xl  p-5 flex flex-col items-center -mt-16">
-        <h1 className="text-3xl font-black p-4">Login</h1>
-        <div className="mt-3 w-64 flex flex-col items-center gap-1.5">
-          <input
-            className="w-full h-8  indent-3 rounded-xl "
-            placeholder="ID"
-            type="text"
-          />
-          <input
-            className="w-full h-8  indent-3 rounded-xl "
-            placeholder="Password"
-            type="password"
-          />
-        </div>
-        <div className="mt-4">
-          {/* <button className="p-2 bg-blue-600 w-64">
-            Login
-          </button> */}
-          <Link href={'/Doctor'} className="p-2 block bg-blue-600 hover:bg-blue-700 w-64 rounded-xl font-bold text-white">
-            Login
-          </Link>
-        </div>
-      </div>
+     <div className="bg-blue-400 w-72 rounded-3xl p-5 flex flex-col items-center -mt-16">
+      <h1 className="text-3xl font-black p-4">Login</h1>
+      <form className="mt-3 w-64 flex flex-col items-center gap-1.5" onSubmit={handleFormSubmit}>
+        <input
+          className="w-full h-8 indent-3 rounded-xl"
+          placeholder="ID"
+          type="text"
+          name="id"
+          value={credentials.id}
+          onChange={handleInputChange}
+        />
+        <input
+          className="w-full h-8 indent-3 rounded-xl"
+          placeholder="Password"
+          type="password"
+          name="password"
+          value={credentials.password}
+          onChange={handleInputChange}
+        />
+        <button className="p-2 block bg-blue-600 hover:bg-blue-700 w-64 rounded-xl font-bold text-white" type="submit">
+          Login
+        </button>
+      </form>
+    </div>
       <div className="fixed bottom-0 bg-zinc-300 p-4  w-80 rounded-t-2xl">
         Temporary Navigation <span className="italic text-gray-800/70 text-sm">(Will Be Changed once Backend Integrated)</span>
         <div className="flex flex-col mt-4">
