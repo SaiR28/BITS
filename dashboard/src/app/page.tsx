@@ -97,32 +97,37 @@ export default function Home() {
           </button>
         </form>
       </div>
-      <div className="fixed bottom-0 bg-zinc-300 p-4  w-80 rounded-t-2xl">
-        Temporary Navigation{" "}
-        <span className="italic text-gray-800/70 text-sm">
-          (Will Be Changed once Backend Integrated)
-        </span>
-        <div className="flex flex-col mt-4">
-          <Link
-            href={"/Dashboards/Doctor"}
-            className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
-          >
-            Doctor Page <IcOutlineOpenInNew />
-          </Link>
-          <Link
-            href={"/Dashboards/Staff"}
-            className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
-          >
-            Staff Page <IcOutlineOpenInNew />
-          </Link>
-          <Link
-            href={"/Dashboards/Patient"}
-            className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
-          >
-            Patient Page <IcOutlineOpenInNew />
-          </Link>
-        </div>
-      </div>
+      
     </main>
   );
+}
+
+
+function TempNav(){
+  return <div className="fixed bottom-0 bg-zinc-300 p-4  w-80 rounded-t-2xl">
+  Temporary Navigation{" "}
+  <span className="italic text-gray-800/70 text-sm">
+    (Will Be Changed once Backend Integrated)
+  </span>
+  <div className="flex flex-col mt-4">
+    <Link
+      href={"/Dashboards/Doctor"}
+      className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
+    >
+      Doctor Page <IcOutlineOpenInNew />
+    </Link>
+    <Link
+      href={"/Dashboards/Staff"}
+      className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
+    >
+      Staff Page <IcOutlineOpenInNew />
+    </Link>
+    <Link
+      href={"/Dashboards/Patient"}
+      className="underline text-blue-500 flex gap-1 items-center hover:text-blue-700"
+    >
+      Patient Page <IcOutlineOpenInNew />
+    </Link>
+  </div>
+</div>
 }
