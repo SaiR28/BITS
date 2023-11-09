@@ -1,6 +1,6 @@
 "use client";
 
-import anime from "animejs";
+import anime, { set } from "animejs";
 import Link from "next/link";
 import { ReactNode, useEffect, useState } from "react";
 import { IcBaselineOpenInNew } from "./icons";
@@ -10,6 +10,10 @@ export function InfoCard(props: any) {
   let i = {
     value: 0,
   };
+  // i.value=props.value
+  // useEffect(()=>{
+  //   setValue(props.value)
+  // },[props.value])
   useEffect(() => {
     anime({
       targets: i,
@@ -21,7 +25,7 @@ export function InfoCard(props: any) {
         setValue(i.value);
       },
     });
-  });
+  },[props.value]);
   return (
   
     <Link href={`/Vis/Chart/${(props.name).replace(' ','')}`} className="border border-1 border-gray-200 transition group hover:border-blue-500 hover:bg-blue-500/10 w-52 h-52 aspect-square rounded p-4 grid">

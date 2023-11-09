@@ -11,7 +11,8 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import faker from "faker";
+import { random } from "animejs";
+
 
 ChartJS.register(
   CategoryScale,
@@ -42,19 +43,19 @@ const data = {
   datasets: [
     {
       label: "Heart Rate",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => (Math.random()*2000)-1000),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
     {
       label: "SpO2",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => (Math.random()*2000)-1000),
       borderColor: "rgb(53, 162, 235)",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
     {
       label: "Hours Slept",
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      data: labels.map(() => (Math.random()*2000)-1000),
       borderColor: "#FF9900",
       backgroundColor: "#FF990044",
     },
