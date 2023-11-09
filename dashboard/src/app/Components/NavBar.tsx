@@ -1,19 +1,20 @@
+'use client'
 import { SVGProps } from "react"
 import Image from "next/image"
 import Link from "next/link"
-function Menu(){
-  return <button className="pr-2">
-<IcRoundMenu className="w-auto h-7 aspect-square"/>
+import { useRouter } from "next/navigation";
+import { MaterialSymbolsArrowBackIosNewRounded } from "./icons";
+function BackButton(){
+  const router=useRouter();
+   
+  return <button onClick={()=>{ router.back()}} className="pr-2">
+<MaterialSymbolsArrowBackIosNewRounded className="w-auto text-4xl hover:bg-blue-300 rounded-full p-2 aspect-square"/>
   </button>
 }
 
 
 
-export function IcRoundMenu(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"></path></svg>
-  )
-}
+
 
 
 export function IcBaselineSearch(props: SVGProps<SVGSVGElement>) {
@@ -24,7 +25,7 @@ export function IcBaselineSearch(props: SVGProps<SVGSVGElement>) {
 
 function SearchBar(){
     return <div className="flex items-center ">
-      <Menu/>
+   
         <input className="h-8 w-80 indent-2" />
         <button className="bg-blue-300 h-8 w-auto aspect-square flex items-center justify-center">
         <IcBaselineSearch/>
@@ -39,7 +40,8 @@ function Profile(props:any){
 }
 export function NavBar(props:any){
     return<div className={`bg-blue-100  flex p-2 gap-2 h-full  items-center justify-between`}>
-    <SearchBar/>
+       <BackButton/>
+    {/* <SearchBar/> */}
     <Profile user={props.user}/>
     <Link href={'/'} className="fixed right-0 bg-red-300 h-12 rounded-l-2xl flex items-center p-3 top-24 hover:bg-red-500">Temporary Logout</Link>
     </div>

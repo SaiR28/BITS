@@ -1,0 +1,81 @@
+"use client";
+import { NavBar } from "@/app/Components/NavBar";
+
+import React from "react";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import faker from "faker";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top" as const,
+    },
+    title: {
+      display: false,
+    },
+  },
+};
+
+const labels = ["January", "February", "March", "April", "May", "June", "July"];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: "Heart Rate",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
+    {
+      label: "SpO2",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "rgb(53, 162, 235)",
+      backgroundColor: "rgba(53, 162, 235, 0.5)",
+    },
+    {
+      label: "Hours Slept",
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "#FF9900",
+      backgroundColor: "#FF990044",
+    },
+  ],
+};
+
+export function Chart(params:any) {
+  return (
+    <div className={"w-[36rem] border border-1 border-gray-100 p-2 mt-4 ml-4"}>
+      <h1 className="font-bold text-xl">{params.title}</h1>
+      <Line options={options} data={data} />;
+    </div>
+  );
+}
+export default function Page({ params }: { params: { id: string } }) {
+  return (
+    <div>
+      <NavBar user={localStorage.getItem('user')}/>
+      <Chart title={params.id} />
+    </div>
+  );
+}

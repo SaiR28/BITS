@@ -39,6 +39,7 @@ export default function Home() {
       // Redirect to the appropriate page based on the API response
       if (token) {
         router.push('/Dashboards/Doctor');
+        localStorage.setItem('user',response.data.user)
       } else {
         // Handle invalid credentials or other error cases
         console.log('Invalid credentials');
