@@ -2,7 +2,6 @@
 
 export function DashboardTable(props:any){
 
-console.log(props.Data)
     return <table className="mt-3">
     <tbody>
       <tr>

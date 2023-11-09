@@ -9,6 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^4.0.6",
+    "@devexpress/dx-react-scheduler": "^4.0.6",
+    "@devexpress/dx-react-scheduler-material-ui": "^4.0.6",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.17",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.5",
+    "@react-pdf-viewer/core": "^3.12.0",
     "animejs": "^3.2.1",
     "axios": "^1.6.0",
     "chart.js": "^4.4.0",
@@ -16,7 +24,8 @@
     "next": "14.0.1",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.2.0",

@@ -1,8 +1,5 @@
-'use client'
 import { InfoCard } from "@/app/Components/InfoCard";
-import { NavBar } from "@/app/Components/NavBar";
 import { DashboardTable } from "@/app/Components/Table";
-import { useState, useEffect } from "react";
 
 export default function Page() {
   const Data: any = [
@@ -32,16 +29,10 @@ export default function Page() {
     ],
   ];
   const Headers: any = ["Patient Name", "Data", "Request Emergency"];
-  const [user, setUser] = useState("");
-  useEffect(() => {
-    setUser(String(localStorage.getItem("user")));
-  }, [user]);
 
   return (
     <div>
-            <NavBar user={user}/>
-            <div className="p-3">
-               <div className="flex gap-2">
+      <div className="flex gap-2">
         <InfoCard name="Total" value={100} />
         <InfoCard name="Mild" value={30} />
         <InfoCard name="OK" value={10} />
@@ -49,8 +40,6 @@ export default function Page() {
       <div>
         <DashboardTable Headers={Headers} Data={Data} />
       </div>
-            </div>
-     
     </div>
   );
 }

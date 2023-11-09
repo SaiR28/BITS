@@ -65,16 +65,15 @@ export const data = {
 
 export function Chart(params:any) {
   return (
-    <div className={"w-[36rem] border border-1 border-gray-100 p-2 mt-4 ml-4"}>
+    <div className={"w-[36rem] border border-1 rounded-lg border-gray-100 p-2 mt-4 ml-4"}>
       <h1 className="font-bold text-xl">{params.title}</h1>
-      <Line options={options} data={data} />;
+      <Line options={options} data={data} />
     </div>
   );
 }
 export default function Page({ params }: { params: { id: string } }) {
   return (
     <div>
-      <NavBar user={localStorage.getItem('user')}/>
       <Chart title={params.id} />
     </div>
   );
