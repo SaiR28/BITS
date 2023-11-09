@@ -21,7 +21,7 @@ export function InfoCard(props: any) {
         setValue(i.value);
       },
     });
-  }, []);
+  });
   return (
   
     <Link href={`/Vis/Chart/${(props.name).replace(' ','')}`} className="border border-1 border-gray-200 transition group hover:border-blue-500 hover:bg-blue-500/10 w-52 h-52 aspect-square rounded p-4 grid">
