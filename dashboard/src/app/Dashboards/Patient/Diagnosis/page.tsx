@@ -1,6 +1,6 @@
 'use client'
+import { Chart } from "@/app/Components/chart";
 import { SvgSpinnersPulse } from "@/app/Components/icons";
-import { Chart } from "@/app/Vis/Chart/[id]/page";
 import { useState } from "react";
 
 export default function App() {
