@@ -7,8 +7,9 @@
 import random
 import requests
 import numpy as np
+TOKEN=''
 API_URL = "https://api-inference.huggingface.co/models/gianlab/swin-tiny-patch4-window7-224-finetuned-ecg-classification"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": f"Bearer {TOKEN}"}
 def query(filename):
     with open(filename, "rb") as f:
         data = f.read()
