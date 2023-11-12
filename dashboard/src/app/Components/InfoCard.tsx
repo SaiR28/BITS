@@ -25,6 +25,7 @@ export function InfoCard(props: any) {
         setValue(i.value);
       },
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[props.value]);
   return (
   
