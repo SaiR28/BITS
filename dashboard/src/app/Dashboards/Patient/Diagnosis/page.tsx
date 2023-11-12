@@ -68,13 +68,13 @@ function Prediction(props: any) {
   if (APIData['pred']['label']=='N') {
     return (
       <div className="m-3  border border-1 rounded-lg border-emerald-600 bg-emerald-500/20  p-3 flex w-96">
-        <h1 className="">AI Prediction : {String(pred_[APIData['pred']['label']])}</h1>
+        <h1 className="">AI Prediction : {String(pred_[APIData.pred.label as string])}</h1>
       </div>
     );
   }
   return (
     <div className="m-3  border border-1 rounded-lg border-red-600 bg-red-500/20  p-3 relative w-96 animate-pulse  ">
-      <h1 className="">AI Prediction : Abnormal Heart Rate : {String(pred_[APIData['pred']['label']])}</h1>
+      <h1 className="">AI Prediction : Abnormal Heart Rate : {String(pred_[APIData.pred.label as string])}</h1>
       <div>
         <div className="text-sm flex items-center gap-4">
           Notifying Emergency Services
